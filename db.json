@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "id": 37,
+      "id_karyawan": "Bill Gates",
+      "name": "Bill Gates",
+      "tanggal": "2022-06-24",
+      "keterangan": "SAKIT"
+    },
+    {
+      "id_karyawan": "Bill Gates",
+      "name": "pras",
+      "tanggal": "2022-06-17",
+      "keterangan": "Test cuti fake api",
+      "createdby": "admin@mail.com",
+      "createdate": "2022-06-14 00:54:01",
+      "id": 38
+    }
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Mendoans",
+    "description": "Daftar API Mendoans",
+    "version": "1.0.0"
+  },
+  "_servers": [
+    {
+      "url": "http://localhost:2471",
+      "description": "localhost"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Role",
+      "description": "Dokumentasi Role"
+    },
+    {
+      "name": "Users",
+      "description": "Dokumentasi Users"
+    },
+    {
+      "name": "Karyawan",
+      "description": "Dokumentasi Karyawan"
+    },
+    {
+      "name": "Cuti",
+      "description": "Dokumentasi Cuti Karyawan"
+    }
+  ],
+  "paths": {
+    "/roles": {
+      "post": {
+        "tags": ["Role"],
+        "summary": "Add Role",
+        "description": "Membuat data role",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role_id": {
+                    "type": "integer"
+                  },
+                  "role_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (id role sudah terdaftar)"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Role"],
+        "summary": "Get Role",
+        "description": "Menampilkan id dan nama role",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Register User",
+        "description": "Menambahkan user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "confPassword": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (email sudah terdaftar, password dan konfirm password tidak sama)"
+          },
+          "404": {
+            "description": "Not Found (role tidak ditemukan)"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all data User",
+        "description": "Menampilkan id, name, email, role",
+        "security": [
+          {
+            "jwt": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized (tidak ada user yang login)"
+          },
+          "403": {
+            "description": "Forbidden (token kadaluarsa)"
+          }
+        }
+      }
+    },
+    "/forgot": {
+      "put": {
+        "tags": ["Users"],
+        "summary": "Reset Password",
+        "description": "Memperbarui password user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "confPassword": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (password dan konfirm password tidak sama)"
+          },
+          "404": {
+            "description": "Not Found (email tidak terdaftar)"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Login User",
+        "description": "Login user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (password salah)"
+          },
+          "404": {
+            "description": "Not Found (email tidak ditemukan)"
+          }
+        }
+      }
+    },
+    "/token": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Refresh Token",
+        "description": "Mendapatkan access token baru/ valid",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized (refresh token di cookie tidak ditemukan (belum login))"
+          },
+          "403": {
+            "description": "Forbidden (user tidak ditemukan, error saat verifikasi jwt)"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Logout User",
+        "description": "Logout user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content (refresh token di cookie tidak ditemukan (belum login), refresh token tidak ada dalam database (tidak cocok))"
+          },
+          "403": {
+            "description": "Forbidden (token kadaluarsa)"
+          }
+        }
+      }
+    },
+    "/Karyawans": {
+      "post": {
+        "tags": ["Karyawan"],
+        "summary": "Add Karyawan",
+        "description": "Membuat data karyawan",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "fullname": {
+                    "type": "string"
+                  },
+                  "statuspernikahan": {
+                    "type": "string"
+                  },
+                  "nik": {
+                    "type": "string"
+                  },
+                  "identitas": {
+                    "type": "string"
+                  },
+                  "divisi": {
+                    "type": "string"
+                  },
+                  "tanggalmasuk": {
+                    "type": "string"
+                  },
+                  "statuskaryawan": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "alamat": {
+                    "type": "string"
+                  },
+                  "posisi": {
+                    "type": "string"
+                  },
+                  "site": {
+                    "type": "string"
+                  },
+                  "telegram": {
+                    "type": "string"
+                  },
+                  "createdby": {
+                    "type": "string"
+                  },
+                  "createdate": {
+                    "type": "string"
+                  },
+                  "pendidikan": {
+                    "type": "string"
+                  },
+                  "institusi": {
+                    "type": "string"
+                  },
+                  "tempatlahir": {
+                    "type": "string"
+                  },
+                  "tanggallahir": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "role_trello": {
+                    "type": "string"
+                  },
+                  "nikkaryawan": {
+                    "type": "string"
+                  },
+                  "jurusan": {
+                    "type": "string"
+                  },
+                  "createddby": {
+                    "type": "string"
+                  },
+                  "updateat": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (user id sudah terdaftar)"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Karyawan"],
+        "summary": "Get All Data Karyawan",
+        "description": "Menampilkan semua data karyawan aktif",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/karyawans/{user_id}": {
+      "get": {
+        "tags": ["Karyawan"],
+        "summary": "Get Data Karyawan",
+        "description": "Menampilkan data karyawan yang dipilih",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User_id karyawan yang akan ditampilkan datanya"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found (user_id tidak terdaftar)"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Karyawan"],
+        "summary": "Update Data Karyawan",
+        "description": "edit data karyawan yang dipilih",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User_id karyawan yang akan di ubah datanya"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "fullname": {
+                    "type": "string"
+                  },
+                  "statuspernikahan": {
+                    "type": "string"
+                  },
+                  "nik": {
+                    "type": "string"
+                  },
+                  "identitas": {
+                    "type": "string"
+                  },
+                  "divisi": {
+                    "type": "string"
+                  },
+                  "tanggalmasuk": {
+                    "type": "string"
+                  },
+                  "statuskaryawan": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "alamat": {
+                    "type": "string"
+                  },
+                  "posisi": {
+                    "type": "string"
+                  },
+                  "site": {
+                    "type": "string"
+                  },
+                  "telegram": {
+                    "type": "string"
+                  },
+                  "createdby": {
+                    "type": "string"
+                  },
+                  "createdate": {
+                    "type": "string"
+                  },
+                  "pendidikan": {
+                    "type": "string"
+                  },
+                  "institusi": {
+                    "type": "string"
+                  },
+                  "tempatlahir": {
+                    "type": "string"
+                  },
+                  "tanggallahir": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "role_trello": {
+                    "type": "string"
+                  },
+                  "nikkaryawan": {
+                    "type": "string"
+                  },
+                  "jurusan": {
+                    "type": "string"
+                  },
+                  "createddby": {
+                    "type": "string"
+                  },
+                  "updateat": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (user_id harus unique)"
+          },
+          "404": {
+            "description": "Not Found (user_id tidak ditemukan)"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Karyawan"],
+        "summary": "Delete Data Karyawan",
+        "description": "hapus data karyawan yang dipilih",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User_id karyawan yang akan di hapus datanya"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/cuti": {
+      "post": {
+        "tags": ["Cuti"],
+        "summary": "Add Furlough Employee",
+        "description": "Menambahkan karyawan yang akan cuti",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id_karyawan": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "tanggal": {
+                    "type": "string"
+                  },
+                  "keterangan": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request (karyawan sudah cuti di tanggal itu)"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Cuti"],
+        "summary": "Get Furloughed Employee",
+        "description": "Menampilkan karyawan yang cuti",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/cuti/{id}": {
+      "delete": {
+        "tags": ["Cuti"],
+        "summary": "Delete Furloughed Employee",
+        "description": "Menghapus karyawan yang cuti",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Id karyawan cuti yang akan di hapus datanya"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found (id karyawan tidak ada di tabel cuti)"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "in": "header",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

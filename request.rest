@@ -1,0 +1,131 @@
+### get data users
+get http://localhost:2471/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJuYW5hbmcgZmVicmkiLCJlbWFpbCI6ImZlYnJpbmFuYW5nQGdtYWlsLmNvbSIsImlhdCI6MTY1MDI4MzM0NCwiZXhwIjoxNjUwMjgzMzY0fQ.UOh1PrXoBukwUR0yD1C8VjKM88tic7esQeuqlSU7mDk
+
+
+### register
+POST http://localhost:2471/users
+Content-Type: application/json
+
+{
+    "name": "nanang febri",
+    "email": "febrinanang@gmail.com",
+    "password": "11223344",
+    "confPassword": "11223344",
+    "role" : 2
+}
+
+### login
+POST http://localhost:2471/login
+Content-Type: application/json
+
+{
+    "email" : "febrinanang@gmail.com",
+    "password" : "11223344"
+}
+
+### refresh token
+GET http://localhost:2471/token
+
+### logout
+DELETE http://localhost:2471/logout
+
+### forgot
+put http://localhost:2471/forgot
+Content-Type: application/json
+
+{
+    "email" : "febrinanang2@gmail.com",
+    "password" : "haloa",
+    "confPassword" : "haloa"
+}
+
+### get data roles
+get http://localhost:2471/roles
+
+### post data role
+POST http://localhost:2471/roles
+Content-Type: application/json
+
+{
+    "role_id" : 11,
+    "role_name" : "Dummy"
+}
+
+### get data karyawan
+GET http://localhost:2471/karyawans
+
+
+### post data karyawan 
+POST http://localhost:2471/karyawans
+Content-Type: application/json
+
+{
+    "user_id": "3",
+    "fullname": "Nina",
+    "statuspernikahan": "JandaSelusin",
+    "nik": "92873230223232",
+    "identitas": "KTP",
+    "divisi": "BSO",
+    "tanggalmasuk": "",
+    "statuskaryawan": "1",
+    "email": "iwan@yahoo.com",
+    "phone": "089121221333",
+    "alamat": "Jl Kantil",
+    "posisi": "",
+    "site": "",
+    "telegram": "",
+    "createdby": "",
+    "createdate": "",
+    "pendidikan": "",
+    "institusi": "",
+    "tempatlahir": "",
+    "tanggallahir": "",
+    "status": "",
+    "role_trello": "",
+    "nikkaryawan": "",
+    "jurusan": "",
+    "createddby": "",
+    "updateat": ""
+}
+
+### update data karyawan 
+PUT http://localhost:2471/karyawans
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "fullname": "Karyo Wawan",
+    "statuspernikahan": "Duda",
+    "nik": "1642957970001246",
+    "identitas": "KTP",
+    "divisi": "Developer",
+    "tanggalmasuk": "",
+    "statuskaryawan": "1",
+    "email": "wawan@yahoo.com",
+    "phone": "089888888888",
+    "alamat": "Jl Cantel",
+    "posisi": "",
+    "site": "",
+    "telegram": "",
+    "createdby": "",
+    "createdate": "",
+    "pendidikan": "",
+    "institusi": "",
+    "tempatlahir": "",
+    "tanggallahir": "",
+    "status": "",
+    "role_trello": "",
+    "nikkaryawan": "",
+    "jurusan": "",
+    "createddby": "",
+    "updateat": ""
+}
+
+### hapus data karyawan 
+PUT http://localhost:2471/karyawan
+Content-Type: application/json
+
+{
+    "user_id": "1"
+}
