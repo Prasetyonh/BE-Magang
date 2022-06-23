@@ -81,6 +81,9 @@ const Karyawan = db.define(
     createddby: {
       type: DataTypes.STRING,
     },
+    tanggalresign: {
+      type: DataTypes.STRING,
+    },
     updateat: {
       type: DataTypes.STRING,
     },

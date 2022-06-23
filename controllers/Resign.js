@@ -30,6 +30,7 @@ export const getAllKaryawansResign = async (req, res) => {
         "role_trello",
         "nikkaryawan",
         "jurusan",
+        "tanggalresign",
       ],
       where: { status: "resign" },
     });

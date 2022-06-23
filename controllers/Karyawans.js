@@ -73,7 +73,7 @@ export const getKaryawan = async (req, res) => {
         "nikkaryawan",
         "jurusan",
       ],
-      where: [{ user_id: user_id }, { status: "active" }],
+      where: [{ user_id: user_id }],
     });
     if (employee) return res.json(employee);
 
