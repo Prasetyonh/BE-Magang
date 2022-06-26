@@ -2,12 +2,12 @@
   "resign": [
     {
       "user_id": "testing2",
-      "tanggalresign": "2022-06-26",
+      "tanggalresign": "2022-06-25",
       "handoverKaryawan": "Mark Zuckerberg,Bill Gates,John Lennon,",
       "keterangan": "Project Mendoan",
       "tanggalHandover": [
-        "2022-06-26T17:00:00.000Z",
-        "2022-07-27T16:59:59.999Z"
+        "2022-06-25T17:00:00.000Z",
+        "2022-06-30T16:59:59.999Z"
       ],
       "id": 1
     }
