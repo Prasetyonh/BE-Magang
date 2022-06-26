@@ -34,4 +34,10 @@ app.use(router);
 //caba midelware baru
 // app.use("/karyawans", router);
 
-app.listen(2471, () => console.log("Server Running at Port 2471"));
+app.listen(process.env.PORT || 2471, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
+});
