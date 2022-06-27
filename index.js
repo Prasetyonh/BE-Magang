@@ -7,7 +7,7 @@ import cors from "cors";
 // Swagger Settings
 import swaggerUI from "swagger-ui-express";
 // import apiDocumentation from "./apidocs.json";
-import apiDocumentation from "./apidocs.json";
+// import apiDocumentation from "./apidocs.json";
 
 // import ContohModel from "./models/ContohModel.js";
 
