@@ -6,7 +6,7 @@ const { DataTypes } = Sequelize;
 const Cuti = db.define(
   "cuti",
   {
-    id_karyawan: {
+    user_id: {
       type: DataTypes.STRING,
     },
     name: {

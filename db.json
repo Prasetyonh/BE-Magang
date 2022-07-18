@@ -1,70 +1,213 @@
 {
   "resign": [
     {
-      "user_id": "testing2",
-      "tanggalresign": "2022-06-25",
-      "handoverKaryawan": "Mark Zuckerberg,Bill Gates,John Lennon,",
-      "keterangan": "Project Mendoan",
+      "user_id": "testingdemo",
+      "tanggalresign": "2022-07-19",
+      "handoverKaryawan": "Mark Zuckerberg,Bill Gates,Johnny Depp,",
+      "keterangan": "Mendoan",
       "tanggalHandover": [
-        "2022-06-25T17:00:00.000Z",
-        "2022-06-30T16:59:59.999Z"
+        "2022-07-19T17:00:00.000Z",
+        "2022-07-31T16:59:59.999Z"
       ],
       "id": 1
+    }
+  ],
+  "summary": [
+    {
+      "activeProject": 12,
+      "resourceActive": 12,
+      "ResourceIdle": 140,
+      "resourcePMO": 152
+    }
+  ],
+  "LastTen": [
+    {
+      "name": "HGrid247 DE",
+      "id": "61c18735f92c341f5e015032",
+      "fullname": "Anto",
+      "type": "removeChecklistFromCard",
+      "tanggal": "2022-07-08 10:24:08"
     },
     {
-      "user_id": "testingdemo",
-      "tanggalresign": "2022-06-29",
-      "handoverKaryawan": "Mark Zuckerberg,John Lennon,Bill Gates,",
-      "keterangan": "Project Mendoan",
-      "tanggalHandover": [
-        "2022-06-29T17:00:00.000Z",
-        "2022-07-15T16:59:59.999Z"
-      ],
+      "name": "HGrid247 DE",
+      "id": "61c18735f92c341f5e015032",
+      "fullname": "Arianto",
+      "type": "addChecklistToCard",
+      "tanggal": "2022-07-08 10:24:04"
+    },
+    {
+      "name": "HGrid247 DE",
+      "id": "61c18735f92c341f5e015032",
+      "fullname": "Anto",
+      "type": "addChecklistToCard",
+      "tanggal": "2022-07-08 10:20:11"
+    },
+    {
+      "name": "HGrid247 DE",
+      "id": "61c18735f92c341f5e015032",
+      "fullname": "Anto",
+      "type": "addChecklistToCard",
+      "tanggal": "2022-07-08 10:19:53"
+    },
+    {
+      "name": "HGrid247 DE",
+      "id": "61c18735f92c341f5e015032",
+      "fullname": "Anato",
+      "type": "createCard",
+      "tanggal": "2022-07-08 10:19:31"
+    },
+    {
+      "name": "POC PES - 20212001000116",
+      "id": "624bb89bfd79c205bf3cdc58",
+      "fullname": "Edi",
+      "type": "commentCard",
+      "tanggal": "2022-07-08 10:13:31"
+    },
+    {
+      "name": "POC PES - 20212001000116",
+      "id": "624bb89bfd79c205bf3cdc58",
+      "fullname": "Esri",
+      "type": "commentCard",
+      "tanggal": "2022-07-08 10:13:16"
+    },
+    {
+      "name": "CDP 2.0",
+      "id": "612d795d53d6bb46dbf09bcf",
+      "fullname": "Rena",
+      "type": "updateCheckItemStateOnCard",
+      "tanggal": "2022-07-08 10:02:41"
+    },
+    {
+      "name": "CDP 2.0",
+      "id": "612d795d53d6bb46dbf09bcf",
+      "fullname": "Rena",
+      "type": "updateCheckItemStateOnCard",
+      "tanggal": "2022-07-08 10:02:40"
+    },
+    {
+      "name": "CDP 2.0",
+      "id": "612d795d53d6bb46dbf09bcf",
+      "fullname": "Rena",
+      "type": "updateCheckItemStateOnCard",
+      "tanggal": "2022-07-08 10:02:39"
+    }
+  ],
+  "Boards": [
+    {
+      "boardid": "5fb1ee36f2aa301bd7407737",
+      "boardname": "PMO - Administration",
+      "url": "https://trello.com/b/KsNNwN5v",
+      "lastactivity": "2022-07-14 10:23:08",
+      "board": "5fb1ee36f2aa301bd7407737",
+      "pm": "arief.dolants",
+      "client": "13",
+      "project_type": "Administrasi",
+      "nilai_project": "2003828127",
+      "mandays": "231",
+      "start_date": "2021-09-29",
+      "end_date": "2021-10-22",
+      "projectdiv": "PMO",
+      "created_by": "arief.dolants",
+      "timenow": "2021-10-12 15:53:46",
+      "status": "ACTIVE",
+      "no_po": "None",
+      "nama_po": "None",
+      "noproject": null,
+      "namaproject": null,
+      "invoice1": null,
+      "invoice2": null
+    },
+    {
+      "boardid": "60b72c3a7065624fe8045fe4",
+      "boardname": "IFRS Simulator",
+      "url": "https://trello.com/b/O2dG4chN",
+      "lastactivity": "2021-11-12 20:05:54",
+      "board": "60b72c3a7065624fe8045fe4",
+      "pm": "meilani.sari",
+      "client": "13",
+      "project_type": "Project",
+      "nilai_project": "281600000",
+      "mandays": "128",
+      "start_date": "2021-08-18",
+      "end_date": "2021-10-22",
+      "projectdiv": "PMO",
+      "created_by": "arief.dolants",
+      "timenow": "2021-10-15 20:25:30",
+      "status": "ACTIVE",
+      "no_po": null,
+      "nama_po": null,
+      "noproject": null,
+      "namaproject": null,
+      "invoice1": null,
+      "invoice2": null
+    }
+  ],
+  "PM": [
+    {
+      "user_id": "agus.ful",
+      "fullname": "Agus Ful"
+    },
+    {
+      "user_id": "ari.puh",
+      "fullname": "Ari Puh"
+    }
+  ],
+  "Assignment": [
+    {
+      "crname": null,
+      "assignment_id": "2",
+      "user_id": "ada.mtin",
+      "fullname": "Adia Jatin",
+      "name": "PMO - Administration",
+      "pm": "Meila Putri",
+      "assignmenttype": "Project",
+      "status": "DONE",
+      "extendassignment": null,
+      "dateassignment": "2021-10-04",
+      "endassignment": "2021-10-22",
       "id": 2
     },
     {
-      "user_id": "testing123",
-      "tanggalresign": "2022-06-29",
-      "handoverKaryawan": "Mark Zuckerberg,Bill Gates,John Lennon,",
-      "keterangan": "Project testing",
-      "tanggalHandover": [
-        "2022-06-29T17:00:00.000Z",
-        "2022-07-01T16:59:59.999Z"
-      ],
+      "crname": null,
+      "assignment_id": "3",
+      "user_id": "agus.prida",
+      "fullname": "Agus ada",
+      "name": "Data Lake IntelligencePT",
+      "pm": "Budi Santo",
+      "assignmenttype": "Project",
+      "status": "ACTIVE",
+      "extendassignment": null,
+      "dateassignment": "2021-03-01",
+      "endassignment": "2021-11-01",
       "id": 3
     },
     {
-      "user_id": "freddiemercury",
-      "tanggalresign": "2022-06-29",
-      "handoverKaryawan": "Mark Zuckerberg,Bill Gates,John Lennon,Johnny,",
-      "keterangan": "Project Mendoan",
-      "tanggalHandover": [
-        "2022-06-28T17:00:00.000Z",
-        "2022-07-02T16:59:59.999Z"
-      ],
+      "crname": null,
+      "user_id": "markz",
+      "fullname": "Mark Zuckerberg",
+      "name": "PMO - Administration",
+      "assignment_id": "",
+      "pm": "Agus Ful",
+      "assignmenttype": "Project",
+      "status": "ACTIVE",
+      "extendassignment": null,
+      "dateassignment": "2022-06-26",
+      "endassignment": "2022-08-06",
       "id": 4
     },
     {
-      "user_id": "test3",
-      "tanggalresign": "2022-06-09",
-      "handoverKaryawan": "Bill Gates,John Lennon,",
-      "keterangan": "Project Testing",
-      "tanggalHandover": [
-        "2022-06-09T17:00:00.000Z",
-        "2022-07-10T16:59:59.999Z"
-      ],
+      "crname": null,
+      "assignment_id": "",
+      "user_id": "billiejoe",
+      "fullname": "Billie Joe",
+      "name": "IFRS Simulator",
+      "pm": "Agus Ful",
+      "assignmenttype": "CSR",
+      "status": "ACTIVE",
+      "extendassignment": null,
+      "dateassignment": "2022-07-01",
+      "endassignment": "2022-08-01",
       "id": 5
-    },
-    {
-      "user_id": "tesssst",
-      "tanggalresign": "",
-      "handoverKaryawan": "Johnny Depp,Billie Joe,",
-      "keterangan": "Test",
-      "tanggalHandover": [
-        "2022-07-11T17:00:00.000Z",
-        "2022-07-23T16:59:59.999Z"
-      ],
-      "id": 6
     }
   ]
 }
