@@ -24,7 +24,9 @@ try {
 } catch (error) {
   console.error(error);
 }
-
+app.get("/", function (req, res) {
+  res.send("Hello world! I am a Mendoan S247 server!");
+});
 // app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(apiDocumentation));
 app.use(cors({ credentials: true, origin: "http://localhost:2470" }));
 app.use(cookieParser());
