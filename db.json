@@ -208,6 +208,19 @@
       "dateassignment": "2022-07-01",
       "endassignment": "2022-08-01",
       "id": 5
+    },
+    {
+      "crname": null,
+      "user_id": "johnny",
+      "fullname": "Johnny Depp",
+      "name": "IFRS Simulator",
+      "pm": "Agus Ful",
+      "assignmenttype": "Project",
+      "status": "HOLD",
+      "extendassignment": "2022-09-10",
+      "dateassignment": "2022-07-01",
+      "endassignment": "2022-08-06",
+      "id": 6
     }
   ]
 }

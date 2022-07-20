@@ -5,8 +5,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 // Swagger Settings
-import swaggerUI from "swagger-ui-express";
-import apiDocumentation from "./apidocs.json";
+// import swaggerUI from "swagger-ui-express";
+// import apiDocumentation from "./apidocs.json";
 
 // import ContohModel from "./models/ContohModel.js";
 
@@ -25,7 +25,7 @@ try {
   console.error(error);
 }
 
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(apiDocumentation));
+// app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(apiDocumentation));
 app.use(cors({ credentials: true, origin: "http://localhost:2470" }));
 app.use(cookieParser());
 app.use(express.json());
