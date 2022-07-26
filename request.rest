@@ -1,7 +1,6 @@
 ### get data users
 get http://localhost:2471/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3LCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjU3MDE4MDExLCJleHAiOjE2NTcwMTgwMzF9.qtez245-yAL7eer_FTRTshdDMLa-E3yQcgMCCgpYTVM
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3LCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjU4ODE0NDczLCJleHAiOjE2NTg4MTQ0OTN9.OpHYUEmLhaShRfB__3hS9MSI8OGyIXDYPMEV-_hxImU
 
 ### register
 POST http://localhost:2471/users
@@ -48,8 +47,8 @@ POST http://localhost:2471/roles
 Content-Type: application/json
 
 {
-    "role_id" : 11,
-    "role_name" : "Dummy"
+    "role_id" : 8,
+    "role_name" : "Project Manager"
 }
 
 ### get data karyawan
