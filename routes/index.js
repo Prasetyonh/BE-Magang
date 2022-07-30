@@ -15,7 +15,7 @@ import {
   deleteKaryawan,
   getKaryawan,
 } from "../controllers/Karyawans.js";
-import { verifyToken } from "../middleware/VerifyToken.js";
+import { verifyToken, adminOnly } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
 import { createCuti, deleteCuti, getCuti } from "../controllers/Cuti.js";
 import { getAllKaryawansResign } from "../controllers/Resign.js";
@@ -23,7 +23,7 @@ import { getAllKaryawansResign } from "../controllers/Resign.js";
 const router = express.Router();
 
 // Users + Role
-router.get("/users", verifyToken, getUsers);
+router.get("/users", verifyToken, adminOnly, getUsers);
 router.post("/users", Register);
 router.post("/login", Login);
 router.get("/token", refreshToken);

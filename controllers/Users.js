@@ -2,12 +2,16 @@ import Users from "../models/UserModel.js";
 import Roles from "../models/RoleModel.js";
 import bcrypt, { compare } from "bcrypt";
 import jwt from "jsonwebtoken";
+import db from "../config/Database.js";
 
 export const getUsers = async (req, res) => {
   try {
-    const users = await Users.findAll({
-      attributes: ["id", "name", "email", "role"],
-    });
+    const users = await db.query(
+      `SELECT * FROM users LEFT JOIN roles ON users.role = roles.role_id`,
+      {
+        type: db.QueryTypes.SELECT,
+      }
+    );
     res.json(users);
   } catch (error) {
     console.log(error);

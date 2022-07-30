@@ -1,6 +1,6 @@
 ### get data users
 get http://localhost:2471/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3LCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjU4ODE0NDczLCJleHAiOjE2NTg4MTQ0OTN9.OpHYUEmLhaShRfB__3hS9MSI8OGyIXDYPMEV-_hxImU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3LCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjU4OTM0OTc0LCJleHAiOjE2NTg5MzQ5OTR9.RqCrmREtxkshgD-R-zEWR0C8Ei-on6PH1TZ6TbKsK4I
 
 ### register
 POST http://localhost:2471/users
